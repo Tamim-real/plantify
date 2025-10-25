@@ -24,7 +24,8 @@ const router = createBrowserRouter([
       { path: "/my-profile", element: <PrivateRoute><MyProfile /></PrivateRoute> },
       {path: "/community", element: <PrivateRoute><PlantCommunity></PlantCommunity></PrivateRoute>},
       { path: "/login", element: <LoginForm></LoginForm>},
-      {path:'/register', element: <Register></Register>}
+      {path:'/register', element: <Register></Register>},
+       {path: "*", element: <ErrorPage /> }
     ],
   },
 ]);
