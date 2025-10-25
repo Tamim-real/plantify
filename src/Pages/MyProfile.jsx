@@ -4,24 +4,26 @@ import { AuthContext } from "../Context/AuthProvider";
 
 const MyProfile = () => {
   const { user, updateUser } = useContext(AuthContext);
+
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
   const [loading, setLoading] = useState(false);
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
-    updateUser(name, photoURL)
-      .then(() => {
-        alert("✅ Profile updated successfully!");
-        setShowModal(false);
-      })
-      .catch((error) => {
-        console.error("Profile update failed:", error);
-        alert("❌ Failed to update profile");
-      })
-      .finally(() => setLoading(false));
+
+    try {
+      await updateUser({ displayName: name, photoURL }); // update Firebase & state
+      alert("✅ Profile updated successfully!");
+      setShowModal(false);
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to update profile");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,17 +38,15 @@ const MyProfile = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
       </div>
 
-      {/* Profile Picture & Info */}
+      {/* Profile Info */}
       <div className="relative px-6 md:px-10 -mt-20">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-          {/* Profile Picture */}
           <img
             src={user?.photoURL || "https://via.placeholder.com/150"}
             alt="Profile"
             className="w-36 h-36 rounded-full border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105"
           />
 
-          {/* Name & Email */}
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl font-extrabold text-gray-900">
               {user?.displayName || "No Name"}
@@ -54,7 +54,6 @@ const MyProfile = () => {
             <p className="text-gray-500 mb-2">{user?.email}</p>
           </div>
 
-          {/* Update Button */}
           <button
             onClick={() => setShowModal(true)}
             className="mt-4 md:mt-0 px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full font-semibold shadow-md hover:from-indigo-600 hover:to-purple-600 transition-all"
@@ -86,10 +85,7 @@ const MyProfile = () => {
             )}
             {user?.social?.github && (
               <a href={user.social.github}>
-                <Github
-                  className="hover:scale-110 transition-transform"
-                  size={22}
-                />
+                <Github className="hover:scale-110 transition-transform" size={22} />
               </a>
             )}
             {user?.social?.twitter && (
@@ -104,11 +100,10 @@ const MyProfile = () => {
         </div>
       </div>
 
-      {/* Update Profile Modal */}
+      {/* Update Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-          <div className="bg-white w-[90%] md:w-[400px] p-6 rounded-2xl shadow-lg relative animate-fadeIn">
-            {/* Close Button */}
+          <div className="bg-white w-[90%] md:w-[400px] p-6 rounded-2xl shadow-lg relative">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
@@ -131,6 +126,7 @@ const MyProfile = () => {
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
                   placeholder="Enter your name"
+                  required
                 />
               </div>
 
@@ -144,6 +140,7 @@ const MyProfile = () => {
                   onChange={(e) => setPhotoURL(e.target.value)}
                   className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
                   placeholder="Enter your photo URL"
+                  required
                 />
               </div>
 
