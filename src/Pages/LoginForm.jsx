@@ -3,7 +3,7 @@ import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AuthContext, auth } from "../Context/AuthProvider";
 import { useLocation, useNavigate } from "react-router";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginForm = () => {
@@ -30,7 +30,7 @@ const LoginForm = () => {
         setUser(user);
         e.target.reset();
         setSuccess(true);
-        navigate(location.state ? location.state : "/");
+        navigate(location.state?.from?.pathname || "/");
       })
       .catch((error) => {
         setError(error.message);
@@ -47,9 +47,27 @@ const LoginForm = () => {
       const user = result.user;
       setUser(user);
       setSuccess(true);
-      navigate(location.state ? location.state : "/");
+      navigate(location.state?.from?.pathname || "/");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    const email = prompt("Please enter your email for password reset:");
+    if (!email) return;
+
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Password reset email sent! Check your inbox.");
+    } catch (err) {
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -115,7 +133,7 @@ const LoginForm = () => {
             <button
               type="button"
               className="text-sm text-indigo-500 hover:underline"
-              onClick={() => alert("Forgot Password Clicked")}
+              onClick={handleForgotPassword}
             >
               Forgot Password?
             </button>
@@ -139,15 +157,13 @@ const LoginForm = () => {
         </div>
 
         {/* Google Login Button */}
-    
-<button
-  onClick={handleGoogleLogin}
-  className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold transition-all"
->
-  <FcGoogle size={24} />
-  Login with Google
-</button>
-
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold transition-all"
+        >
+          <FcGoogle size={24} />
+          Login with Google
+        </button>
 
         {/* Messages */}
         {success && (
