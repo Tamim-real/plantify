@@ -8,7 +8,7 @@ const Footer = () => {
         
         {/* Brand Section */}
         <div>
-          <h2 className="text-2xl font-bold text-green-700 mb-3">🌿 GreenNest</h2>
+          <h2 className="text-2xl font-bold text-green-700 mb-3">🌿 Plantify</h2>
           <p className="text-sm text-gray-600">
             Bringing nature closer to your home — one plant at a time.
           </p>
