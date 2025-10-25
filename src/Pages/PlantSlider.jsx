@@ -10,24 +10,44 @@ import { Leaf, Sprout, TreePine } from "lucide-react";
 const slides = [
   {
     icon: Leaf,
-    title: "Discover Rare Plants",
-    description:
-      "Explore our collection of exotic and rare plant species from around the world",
+    title: "Snake Plant",
+    image: "https://media.istockphoto.com/id/1247359811/photo/close-up-of-snake-plants-for-sale.jpg?s=612x612&w=0&k=20&c=brRA3ebqEPedSxm_oOaeGKKtJwfSbUFdGqQRH2UJCXc=",
     gradient: "from-green-100 to-green-300",
   },
   {
     icon: Sprout,
-    title: "Grow Your Garden",
-    description: "Learn expert tips and techniques to nurture your plants to perfection",
+    title: "Monstera Deliciosa",
+    image: "https://plantersplace.com/wp-content/uploads/2022/08/20200309_110255-scaled.jpg",
     gradient: "from-green-200 to-green-400",
   },
   {
     icon: TreePine,
-    title: "Join Our Community",
-    description: "Connect with fellow plant enthusiasts and share your green journey",
+    title: "ZZ Plant",
+    image: "https://media.istockphoto.com/id/1692980568/photo/zamioculcas-houseplant-in-white-ceramic-pot-on-concrete-table-at-home.jpg?s=612x612&w=0&k=20&c=iviM-GXCYxQoWoFYJ89mmBaZ3CDAtQ1CUV_GUd_67WY=",
     gradient: "from-green-300 to-green-500",
   },
+  {
+    icon: Sprout,
+    title: "Fiddle Leaf Fig",
+    image: "https://www.palasa.co.in/cdn/shop/articles/IMG_20220226_173034_1.jpg?v=1694161186",
+    gradient: "from-green-200 to-green-500",
+  },
+  {
+    icon: Leaf,
+    title: "Pothos",
+    image: "https://media.istockphoto.com/id/1320269359/photo/tropical-epipremnum-aureum-marble-queen-pothos-houseplant-in-flower-pot.jpg?s=612x612&w=0&k=20&c=Rc4J3wkUQgd9vN_O7c7wRnbqCy1UUafqRSYLE2KGv_c=",
+    gradient: "from-green-100 to-green-400",
+  },
+  {
+    icon: TreePine,
+    title: "Peace Lily",
+    image: "https://cdn11.bigcommerce.com/s-fr32feerow/images/stencil/832x750/uploaded_images/peace-lily-01.jpg?t=1483630233",
+    gradient: "from-green-200 to-green-500",
+  },
 ];
+
+
+
 
 const PlantSlider = () => {
   return (
@@ -75,10 +95,14 @@ const PlantSlider = () => {
                     className={`h-full w-full bg-gradient-to-br ${slide.gradient} flex flex-col items-center justify-center text-center px-6 py-8`}
                   >
                     <Icon className="w-20 h-20 text-green-800 mb-4" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                       {slide.title}
                     </h2>
-                    <p className="text-white text-sm md:text-base max-w-xs">{slide.description}</p>
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-64 h-64 object-cover rounded-xl shadow-lg border-4 border-white"
+                    />
                   </div>
                 </SwiperSlide>
               );
