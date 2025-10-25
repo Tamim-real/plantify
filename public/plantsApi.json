@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://media.istockphoto.com/id/1247359811/photo/close-up-of-snake-plants-for-sale.jpg?s=612x612&w=0&k=20&c=brRA3ebqEPedSxm_oOaeGKKtJwfSbUFdGqQRH2UJCXc=",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Monstera Deliciosa",
+    "category": "Tropical",
+    "price": 35,
+    "rating": 4.7,
+    "availableStock": 5,
+    "careLevel": "Medium",
+    "description": "Large, glossy leaves with unique perforations; prefers bright indirect light.",
+    "image": "https://plantersplace.com/wp-content/uploads/2022/08/20200309_110255-scaled.jpg",
+    "providerName": "LeafyHome"
+  },
+  {
+    "plantId": 3,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 22,
+    "rating": 4.6,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "Tolerates low light and infrequent watering; perfect for busy lifestyles.",
+    "image": "https://media.istockphoto.com/id/1692980568/photo/zamioculcas-houseplant-in-white-ceramic-pot-on-concrete-table-at-home.jpg?s=612x612&w=0&k=20&c=iviM-GXCYxQoWoFYJ89mmBaZ3CDAtQ1CUV_GUd_67WY=",
+    "providerName": "GreenThumb Co."
+  },
+  {
+    "plantId": 4,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Decorative",
+    "price": 50,
+    "rating": 4.5,
+    "availableStock": 3,
+    "careLevel": "Hard",
+    "description": "Popular indoor tree with large, violin-shaped leaves; requires bright light and regular care.",
+    "image": "https://www.palasa.co.in/cdn/shop/articles/IMG_20220226_173034_1.jpg?v=1694161186",
+    "providerName": "Urban Jungle"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Pothos",
+    "category": "Trailing",
+    "price": 15,
+    "rating": 4.9,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "Versatile vine with heart-shaped leaves; grows well in low to bright light.",
+    "image": "https://media.istockphoto.com/id/1320269359/photo/tropical-epipremnum-aureum-marble-queen-pothos-houseplant-in-flower-pot.jpg?s=612x612&w=0&k=20&c=Rc4J3wkUQgd9vN_O7c7wRnbqCy1UUafqRSYLE2KGv_c=",
+    "providerName": "GreenLife Nursery"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 28,
+    "rating": 4.7,
+    "availableStock": 7,
+    "careLevel": "Medium",
+    "description": "Elegant white flowers; thrives in moderate indoor light and helps purify the air.",
+    "image": "https://cdn11.bigcommerce.com/s-fr32feerow/images/stencil/832x750/uploaded_images/peace-lily-01.jpg?t=1483630233",
+    "providerName": "LeafyHome"
+  }
+]
