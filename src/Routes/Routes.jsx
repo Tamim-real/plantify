@@ -10,6 +10,7 @@ import ErrorPage from "../Pages/ErrorPage";
 
 import LoginForm from "../Pages/LoginForm";
 import Register from "../Pages/Register";
+import PlantCommunity from "../Pages/PlantCommunity";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/plants", element: <PrivateRoute><Plants /></PrivateRoute> },
       { path: "/plant/:id", element: <PrivateRoute><PlantDetail /></PrivateRoute> },
       { path: "/my-profile", element: <PrivateRoute><MyProfile /></PrivateRoute> },
+      {path: "/community", element: <PrivateRoute><PlantCommunity></PlantCommunity></PrivateRoute>},
       { path: "/login", element: <LoginForm></LoginForm>},
       {path:'/register', element: <Register></Register>}
     ],
