@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-
 import { Link } from "react-router-dom";
-import { auth } from "../Context/AuthProvider";
+import { AuthContext } from "../Context/AuthProvider";
+import { useLocation, useNavigate } from "react-router";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const { signIn } = useContext(AuthContext); 
+  const location = useLocation();
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,16 +22,21 @@ const LoginForm = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log(result.user);
-      setSuccess(true);
-      e.target.reset();
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        e.target.reset();
+        setSuccess(true);
+        navigate(`${location.state? location.state : "/"}`)
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+      })
+      .finally(() => {
+        setLoading(false); 
+      });
   };
 
   const inputClass =
@@ -48,7 +55,9 @@ const LoginForm = () => {
         <form onSubmit={handleLogin} className="space-y-5">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
             <div className="relative">
               <Mail size={18} className="absolute left-3 top-3 text-gray-400" />
               <input
@@ -63,7 +72,9 @@ const LoginForm = () => {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Password
+            </label>
             <div className="relative">
               <Lock size={18} className="absolute left-3 top-3 text-gray-400" />
               <input
@@ -104,14 +115,23 @@ const LoginForm = () => {
           </button>
 
           {/* Messages */}
-          {success && <p className="text-green-600 text-center mt-2">Logged in successfully</p>}
-          {error && <p className="text-red-600 text-center mt-2">{error}</p>}
+          {success && (
+            <p className="text-green-600 text-center mt-2">
+              Logged in successfully
+            </p>
+          )}
+          {error && (
+            <p className="text-red-600 text-center mt-2">{error}</p>
+          )}
         </form>
 
         {/* Signup Link */}
         <p className="text-center mt-6 text-gray-600">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-indigo-600 font-medium hover:underline">
+          <Link
+            to="/register"
+            className="text-indigo-600 font-medium hover:underline"
+          >
             Sign up
           </Link>
         </p>

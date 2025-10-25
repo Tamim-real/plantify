@@ -11,7 +11,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, logOut } = useContext(AuthContext);
+
+  const handleLogout=()=>{
+    logOut().then(()=>{
+      alert('loggeed out')
+    })
+    
+  }
 
   return (
     <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
@@ -47,7 +54,7 @@ const Navbar = () => {
                     <div className="px-4 py-2 text-gray-700 font-medium">{user.name}</div>
                     <div className="px-4 py-2 text-gray-500 text-sm">{user.email}</div>
                     <button
-                      onClick={() => setUser(null)}
+                      onClick={handleLogout}
                       className="w-full text-left px-4 py-2 hover:bg-green-600 hover:text-white transition"
                     >
                       Logout
@@ -94,7 +101,7 @@ const Navbar = () => {
                 <div className="text-gray-700 font-medium">{user.name}</div>
                 <div className="text-gray-500 text-sm">{user.email}</div>
                 <button
-                  onClick={() => setUser(null)}
+                  onClick={handleLogout}
                   className="px-4 py-2 w-full text-white bg-green-600 rounded-lg hover:bg-green-700 transition"
                 >
                   Logout
