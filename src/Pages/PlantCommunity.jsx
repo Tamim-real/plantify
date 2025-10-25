@@ -7,7 +7,7 @@ const initialPosts = [
     userName: "Aarav PlantLover",
     userImage: "https://i.pravatar.cc/100?img=11",
     plantImage:
-      "https://images.unsplash.com/photo-1616627454491-d02b4c2bcbf4?auto=format&fit=crop&w=800&q=80",
+      "https://media.istockphoto.com/id/1247359811/photo/close-up-of-snake-plants-for-sale.jpg?s=612x612&w=0&k=20&c=brRA3ebqEPedSxm_oOaeGKKtJwfSbUFdGqQRH2UJCXc=",
     caption: "My snake plant is growing beautifully this week! 🌿💚",
     likes: 23,
     liked: false,
@@ -17,7 +17,7 @@ const initialPosts = [
     userName: "Sophia Green",
     userImage: "https://i.pravatar.cc/100?img=15",
     plantImage:
-      "https://images.unsplash.com/photo-1599043513900-cd285b72a04e?auto=format&fit=crop&w=800&q=80",
+      "https://media.istockphoto.com/id/1320269359/photo/tropical-epipremnum-aureum-marble-queen-pothos-houseplant-in-flower-pot.jpg?s=612x612&w=0&k=20&c=Rc4J3wkUQgd9vN_O7c7wRnbqCy1UUafqRSYLE2KGv_c=",
     caption: "Just repotted my peace lily, it looks so fresh now! 🌸✨",
     likes: 45,
     liked: false,
