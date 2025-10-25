@@ -1,5 +1,5 @@
 import React from "react";
-// import { Facebook, Instagram, Pinterest } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaPinterestP } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -31,20 +31,20 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        {/* <div>
+        <div>
           <h3 className="text-lg font-semibold text-green-700 mb-3">Follow Us</h3>
           <div className="flex justify-center md:justify-start space-x-4">
             <a href="#" aria-label="Instagram" className="hover:text-pink-600 transition">
-              <Instagram size={22} />
+              <FaInstagram size={22} />
             </a>
             <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition">
-              <Facebook size={22} />
+              <FaFacebookF size={22} />
             </a>
             <a href="#" aria-label="Pinterest" className="hover:text-red-600 transition">
-              <Pinterest size={22} />
+              <FaPinterestP size={22} />
             </a>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Bottom Text */}
