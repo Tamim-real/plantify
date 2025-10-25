@@ -15,45 +15,43 @@ const LoginForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setSuccess(false);
+ const from = location.state?.from?.pathname || "/";
 
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setLoading(true); setError(""); setSuccess(false);
 
-    signIn(email, password)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        e.target.reset();
-        setSuccess(true);
-        navigate(location.state?.from?.pathname || "/");
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setLoading(false));
-  };
+  const email = e.target.email.value;
+  const password = e.target.password.value;
 
-  const handleGoogleLogin = async () => {
-    setLoading(true);
-    const provider = new GoogleAuthProvider();
-
-    try {
-      const result = await signInWithPopup(auth, provider);
+  signIn(email, password)
+    .then(result => {
       const user = result.user;
       setUser(user);
+      e.target.reset();
       setSuccess(true);
-      navigate(location.state?.from?.pathname || "/");
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+      navigate(from, { replace: true }); // ✅ navigate to desired location
+    })
+    .catch(err => setError(err.message))
+    .finally(() => setLoading(false));
+};
+
+const handleGoogleLogin = async () => {
+  setLoading(true);
+  const provider = new GoogleAuthProvider();
+
+  try {
+    const result = await signInWithPopup(auth, provider);
+    setUser(result.user);
+    setSuccess(true);
+    navigate(from, { replace: true }); // ✅ navigate to desired location
+  } catch (err) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleForgotPassword = async () => {
     const email = prompt("Please enter your email for password reset:");
