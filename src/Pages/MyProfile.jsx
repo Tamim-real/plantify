@@ -15,7 +15,7 @@ const MyProfile = () => {
     setLoading(true);
 
     try {
-      await updateUser({ displayName: name, photoURL }); // update Firebase & state
+      await updateUser({ displayName: name, photoURL }); 
       alert("✅ Profile updated successfully!");
       setShowModal(false);
     } catch (error) {
@@ -62,7 +62,7 @@ const MyProfile = () => {
           </button>
         </div>
 
-        {/* Contact & Social */}
+        
         <div className="flex flex-wrap items-center gap-6 mt-6 text-gray-800 mb-5">
           <div className="flex items-center gap-2 font-bold text-gray-900">
             <Mail size={18} /> {user?.email}

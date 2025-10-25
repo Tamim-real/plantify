@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-green-50 text-gray-700 pt-10 pb-6 mt-20 border-t border-green-100">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
         
-        {/* Brand Section */}
+      
         <div>
           <h2 className="text-2xl font-bold text-green-700 mb-3">🌿 Plantify</h2>
           <p className="text-sm text-gray-600">
@@ -14,7 +14,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+       
         <div>
           <h3 className="text-lg font-semibold text-green-700 mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -30,7 +30,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Icons */}
+    
         <div>
           <h3 className="text-lg font-semibold text-green-700 mb-3">Follow Us</h3>
           <div className="flex justify-center md:justify-start space-x-4">

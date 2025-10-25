@@ -16,12 +16,36 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    setError(""); setSuccess(false); setLoading(true);
+    setError(""); 
+    setSuccess(false); 
+    setLoading(true);
 
     const name = e.target.name.value.trim();
     const photo = e.target.photo.value.trim() || "https://via.placeholder.com/150";
     const email = e.target.email.value.trim();
     const password = e.target.password.value.trim();
+
+    // ✅ Password Validation
+    const uppercaseReg = /[A-Z]/;
+    const lowercaseReg = /[a-z]/;
+
+    if (!uppercaseReg.test(password)) {
+      setError("Password must contain at least one uppercase letter");
+      setLoading(false);
+      return;
+    }
+
+    if (!lowercaseReg.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      setLoading(false);
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      setLoading(false);
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -31,7 +55,6 @@ const Register = () => {
             setUser({ ...user, displayName: name, photoURL: photo });
             setSuccess(true);
             e.target.reset();
-            // ✅ Navigate to desired location after registration
             navigate(location.state?.from?.pathname || "/");
           })
           .catch(err => setError("Profile update failed: " + err.message));
@@ -46,7 +69,6 @@ const Register = () => {
       .then(result => {
         setUser(result.user);
         setSuccess(true);
-       
         navigate(location.state?.from?.pathname || "/");
       })
       .catch(err => setError(err.message))
@@ -101,11 +123,12 @@ const Register = () => {
               <Lock className="text-gray-400 mr-2" size={18} />
               <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full outline-none" required/>
               <button type="button" onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
+                {showPassword ? <EyeOff size={18}/> : <Eye size={18}/> }
               </button>
             </div>
           </div>
 
+          {/* Error & Success */}
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {success && <p className="text-green-600 text-sm">Registration successful!</p>}
 

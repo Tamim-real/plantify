@@ -149,14 +149,14 @@ const LoginForm = () => {
           </button>
         </form>
 
-        {/* OR Divider */}
+      
         <div className="flex items-center my-4">
           <hr className="flex-1 border-gray-300" />
           <span className="mx-2 text-gray-400">OR</span>
           <hr className="flex-1 border-gray-300" />
         </div>
 
-        {/* Google Login Button */}
+      
         <button
           onClick={handleGoogleLogin}
           className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold transition-all"
