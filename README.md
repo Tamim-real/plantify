@@ -15,13 +15,7 @@ It allows users to explore, search, and purchase a wide variety of plants online
 ---
 
 ## 🛠️ Tech Stack
-<p align="center" style="display:flex; gap:15px; flex-wrap:wrap;">
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=html" width="40" /><br>HTML
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=css" width="40" /><br>CSS
-  </div>
+<p align="center" style="display:flex; gap:25px; flex-wrap:wrap;">
   <div align="center">
     <img src="https://skillicons.dev/icons?i=js" width="40" /><br>JavaScript
   </div>
@@ -29,21 +23,16 @@ It allows users to explore, search, and purchase a wide variety of plants online
     <img src="https://skillicons.dev/icons?i=react" width="40" /><br>React
   </div>
   <div align="center">
-    <img src="https://skillicons.dev/icons?i=nodejs" width="40" /><br>Node.js
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=express" width="40" /><br>Express
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=mongodb" width="40" /><br>MongoDB
-  </div>
-  <div align="center">
     <img src="https://skillicons.dev/icons?i=tailwind" width="40" /><br>Tailwind
   </div>
   <div align="center">
-    <img src="https://skillicons.dev/icons?i=vercel" width="40" /><br>Vercel
+    <img src="https://skillicons.dev/icons?i=firebase" width="40" /><br>Firebase
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=netlify" width="40" /><br>Netlify
   </div>
 </p>
+
 
 ---
 
