@@ -1,8 +1,8 @@
 # 🌱 Plantify
 
 <p align="center">
-  <a href="https://plantify.example.com" target="_blank">
-    🌐 Live Website
+  <a href="https://plantifytech.netlify.app/" target="_blank">
+    🌐 Explore Live
   </a>
 </p>
 
@@ -15,39 +15,26 @@ It allows users to explore, search, and purchase a wide variety of plants online
 ---
 
 ## 🛠️ Tech Stack
-<p align="center" style="display:flex; gap:25px; flex-wrap:wrap;">
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=js" width="40" /><br>JavaScript
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=react" width="40" /><br>React
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=tailwind" width="40" /><br>Tailwind
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=firebase" width="40" /><br>Firebase
-  </div>
-  <div align="center">
-    <img src="https://skillicons.dev/icons?i=netlify" width="40" /><br>Netlify
-  </div>
+<p align="center" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+  <img src="https://skillicons.dev/icons?i=js" width="40" title="JavaScript" />
+  <img src="https://skillicons.dev/icons?i=react" width="40" title="React" />
+  <img src="https://skillicons.dev/icons?i=tailwind" width="40" title="Tailwind" />
+  <img src="https://skillicons.dev/icons?i=firebase" width="40" title="Firebase" />
+  <img src="https://skillicons.dev/icons?i=netlify" width="40" title="Netlify" />
 </p>
 
 
 ---
 
 ## ✨ Features
-- Fully responsive and modern UI  
-- Browse plants by category and search functionality  
-- Interactive animations and hover effects  
-- Add to cart & checkout system  
-- Secure backend with Node.js, Express & MongoDB  
-- Optimized for performance and SEO  
+- 🛒 Purchase plants online with ease  
+- 🔒 Secure user authentication and login  
+- 🌿 Explore a wide variety of plants by category  
+- 👩‍🌾 Get expert suggestions and recommendations  
+- 💡 Access plant-related tips and guides  
+- 📝 Post and share content in the community section
 
----
 
-## 🚀 Live Demo
-[🌐 Visit Plantify Live](https://plantify.example.com)
 
 ---
 
