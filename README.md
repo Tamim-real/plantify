@@ -1,16 +1,78 @@
-# React + Vite
+# 🌱 Plantify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="https://plantify.example.com" target="_blank">
+    🌐 Live Website
+  </a>
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Project Overview
+Plantify is a modern, responsive, and user-friendly website for plant enthusiasts.  
+It allows users to explore, search, and purchase a wide variety of plants online with smooth navigation and interactive UI.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+<p align="center" style="display:flex; gap:15px; flex-wrap:wrap;">
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=html" width="40" /><br>HTML
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=css" width="40" /><br>CSS
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=js" width="40" /><br>JavaScript
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=react" width="40" /><br>React
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=nodejs" width="40" /><br>Node.js
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=express" width="40" /><br>Express
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=mongodb" width="40" /><br>MongoDB
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=tailwind" width="40" /><br>Tailwind
+  </div>
+  <div align="center">
+    <img src="https://skillicons.dev/icons?i=vercel" width="40" /><br>Vercel
+  </div>
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- Fully responsive and modern UI  
+- Browse plants by category and search functionality  
+- Interactive animations and hover effects  
+- Add to cart & checkout system  
+- Secure backend with Node.js, Express & MongoDB  
+- Optimized for performance and SEO  
+
+---
+
+## 🚀 Live Demo
+[🌐 Visit Plantify Live](https://plantify.example.com)
+
+---
+
+## 📂 Clone & Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/Tamim-real/plantify.git
+
+# Navigate into the project directory
+cd plantify
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
