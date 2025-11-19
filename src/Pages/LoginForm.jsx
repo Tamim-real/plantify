@@ -30,7 +30,7 @@ const handleLogin = async (e) => {
       setUser(user);
       e.target.reset();
       setSuccess(true);
-      navigate(from, { replace: true }); // ✅ navigate to desired location
+      navigate(from, { replace: true }); 
     })
     .catch(err => setError(err.message))
     .finally(() => setLoading(false));
